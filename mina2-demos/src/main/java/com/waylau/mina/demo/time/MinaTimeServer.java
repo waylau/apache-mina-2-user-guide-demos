@@ -17,7 +17,7 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
  * @date 2015-4-5
  */
 public class MinaTimeServer {
- 
+
 	public static void main(String[] args) throws Exception {
 		int port;
 		if (args.length > 0) {
