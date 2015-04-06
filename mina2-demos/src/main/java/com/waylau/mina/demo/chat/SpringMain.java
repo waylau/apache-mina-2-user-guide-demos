@@ -25,6 +25,6 @@ public class SpringMain {
     }
 
     public static ConfigurableApplicationContext getApplicationContext() {
-        return new ClassPathXmlApplicationContext("org/apache/mina/example/chat/serverContext.xml");
+        return new ClassPathXmlApplicationContext("com/waylau/mina/demo/chat/serverContext.xml");
     }
 }

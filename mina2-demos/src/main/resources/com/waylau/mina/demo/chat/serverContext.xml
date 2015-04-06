@@ -41,7 +41,7 @@
   <!-- The SSL configuration -->
   <bean id="keystoreFactory" class="org.apache.mina.filter.ssl.KeyStoreFactory">
     <property name="password" value="boguspw"/>
-    <property name="dataUrl" value="classpath:org/apache/mina/example/echoserver/ssl/bogus.cert"/>
+    <property name="dataUrl" value="classpath:com/waylau/mina/demo/echoserver/ssl/bogus.cert"/>
   </bean>
 
   <bean id="keyStore" factory-bean="keystoreFactory" factory-method="newInstance"/>
