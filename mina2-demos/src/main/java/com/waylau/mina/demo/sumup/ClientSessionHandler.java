@@ -1,10 +1,20 @@
 package com.waylau.mina.demo.sumup;
 
+import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.waylau.mina.demo.sumup.message.AddMessage;
+import com.waylau.mina.demo.sumup.message.ResultMessage;
+
+/**
+ * {@link IoHandler} for SumUp client.
+ *
+ * @author waylau.com
+ * @date 2015-4-6
+ */
 public class ClientSessionHandler extends IoHandlerAdapter {
 
 	private final static Logger LOGGER = LoggerFactory

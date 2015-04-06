@@ -1,10 +1,12 @@
-package com.waylau.mina.demo.sumup;
+package com.waylau.mina.demo.sumup.codec;
 
 import org.apache.mina.core.buffer.IoBuffer;
 import org.apache.mina.core.session.IoSession;
 import org.apache.mina.filter.codec.ProtocolDecoderOutput;
 import org.apache.mina.filter.codec.demux.MessageDecoder;
 import org.apache.mina.filter.codec.demux.MessageDecoderResult;
+
+import com.waylau.mina.demo.sumup.message.AbstractMessage;
 
 public abstract class AbstractMessageDecoder implements MessageDecoder {
 	private final int type;

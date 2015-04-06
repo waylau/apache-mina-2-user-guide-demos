@@ -10,6 +10,14 @@ import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactor
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
+import com.waylau.mina.demo.sumup.codec.SumUpProtocolCodecFactory;
+
+/**
+ * (<strong>Entry Point</strong>) Starts SumUp client.
+ *
+ * @author waylau.com
+ * @date 2015-4-6
+ */
 public class Client {
 
 	private static final long CONNECT_TIMEOUT = 30 * 1000L; // 30 秒;

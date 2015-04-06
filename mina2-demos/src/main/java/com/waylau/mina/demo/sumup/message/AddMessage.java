@@ -1,4 +1,4 @@
-package com.waylau.mina.demo.sumup;
+package com.waylau.mina.demo.sumup.message;
 
 public class AddMessage extends AbstractMessage {
 	private static final long serialVersionUID = -940833727168119141L;

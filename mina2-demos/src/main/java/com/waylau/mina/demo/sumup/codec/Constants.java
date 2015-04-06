@@ -1,4 +1,4 @@
-package com.waylau.mina.demo.sumup;
+package com.waylau.mina.demo.sumup.codec;
 
 public class Constants {
 	public static final int TYPE_LEN = 2;
