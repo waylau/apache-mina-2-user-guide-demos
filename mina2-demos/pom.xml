@@ -15,6 +15,8 @@
 		<version.mina>2.0.9</version.mina>
 		<version.log4j>1.2.17</version.log4j>
 		<version.slf4j.api>1.7.12</version.slf4j.api>
+		<version.springframework>2.5.6.SEC03</version.springframework>
+    	<version.xbean.spring>4.0</version.xbean.spring>
 	</properties>
 	<build>
 		<plugins>
@@ -75,6 +77,33 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+      <!-- Integration -->
+
+      <dependency>
+        <groupId>org.apache.xbean</groupId>
+        <artifactId>xbean-spring</artifactId>
+        <version>${version.xbean.spring}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring</artifactId>
+        <version>${version.springframework}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
 
 	</dependencies>
 </project>
