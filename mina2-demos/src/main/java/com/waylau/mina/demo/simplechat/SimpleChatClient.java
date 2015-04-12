@@ -27,14 +27,14 @@ public class SimpleChatClient {
 	 */
 	public static void main(String[] args) {
 		
-		NioSocketConnector connector = new NioSocketConnector();
+		NioSocketConnector connector = new NioSocketConnector(); // (1)
 		connector.setConnectTimeoutMillis(CONNECT_TIMEOUT);
 		connector.getFilterChain().addLast( "codec", 
 				new ProtocolCodecFilter( new TextLineCodecFactory( Charset.forName( "UTF-8" ))));
 		connector.setHandler(new SimpleChatClientHandler());
 		IoSession session;
 		ConnectFuture future = connector.connect(new InetSocketAddress(
-				HOSTNAME, PORT));
+				HOSTNAME, PORT));  // (2)
 		future.awaitUninterruptibly();
 		session = future.getSession();
 
@@ -43,13 +43,8 @@ public class SimpleChatClient {
                 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 				session.write(in.readLine());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
-		// wait until the summation is done
-		//session.getCloseFuture().awaitUninterruptibly();
-		//connector.dispose();
 	}
-
 }

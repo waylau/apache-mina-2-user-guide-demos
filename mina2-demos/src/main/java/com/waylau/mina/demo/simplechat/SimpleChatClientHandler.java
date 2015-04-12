@@ -1,6 +1,5 @@
 package com.waylau.mina.demo.simplechat;
 
-import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 
@@ -9,14 +8,7 @@ import org.apache.mina.core.session.IoSession;
  *
  * @author <a href="http://www.waylau.com">waylau.com</a>  2015年4月10日
  */
-public class SimpleChatClientHandler extends IoHandlerAdapter implements
-		IoHandler {
-	/**
-	 * 
-	 */
-	public SimpleChatClientHandler() {
-		// TODO Auto-generated constructor stub
-	}
+public class SimpleChatClientHandler extends IoHandlerAdapter {
 	@Override
 	public void messageReceived(IoSession session, Object message) {
 		String str = message.toString();

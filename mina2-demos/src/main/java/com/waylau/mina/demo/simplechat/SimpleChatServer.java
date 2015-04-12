@@ -17,9 +17,7 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
  * @author <a href="http://www.waylau.com">waylau.com</a> 2015年4月10日
  */
 public class SimpleChatServer {
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		int port;
 		if (args.length > 0) {
@@ -28,21 +26,20 @@ public class SimpleChatServer {
 			port = 8080;
 		}
 		
-		SocketAcceptor acceptor = new NioSocketAcceptor();
+		SocketAcceptor acceptor = new NioSocketAcceptor(); // (1)
 		
 		acceptor.getFilterChain().addLast( "codec", 
-				new ProtocolCodecFilter( new TextLineCodecFactory( Charset.forName( "UTF-8" ))));
-		acceptor.setHandler(new SimpleChatServerHandler());
+				new ProtocolCodecFilter( new TextLineCodecFactory( Charset.forName( "UTF-8" ))));      // (2)
+		acceptor.setHandler(new SimpleChatServerHandler()); // (3)
 		
-		acceptor.getSessionConfig().setReadBufferSize(2048);
-		acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 100);
+		acceptor.getSessionConfig().setReadBufferSize(2048); // (4)
+		acceptor.getSessionConfig().setIdleTime(IdleStatus.BOTH_IDLE, 100);// (5)
 		
 		try {
-			acceptor.bind(new InetSocketAddress(port));
+			acceptor.bind(new InetSocketAddress(port)); // (6)
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		System.out.println("[Server]Listening on port " + port);
 	}
-
 }
